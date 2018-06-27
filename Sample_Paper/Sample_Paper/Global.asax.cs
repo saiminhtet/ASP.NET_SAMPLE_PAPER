@@ -16,6 +16,9 @@ namespace Sample_Paper
         protected void Session_Start(object sender, EventArgs e)
         {
             Session["receipt"] = new Receipt();
+
+
+            //List<Rebates> rebatelist = new List<Rebates>(rebates);
             Session["rebate"] = new Rebates();
         }
     }

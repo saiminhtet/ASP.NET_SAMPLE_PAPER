@@ -16,7 +16,15 @@
                        <asp:Label ID="Label1" runat="server" Text="Vehicle number: "></asp:Label>
                    </td>
                    <td>
-                       <asp:TextBox ID="txt_vehicleNo" runat="server"></asp:TextBox>
+                       <asp:TextBox ID="txt_vehicleNo" runat="server" OnTextChanged="txt_vehicleNo_TextChanged"></asp:TextBox>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <asp:Label ID="Label5" runat="server" Text="Existing Rebates: "></asp:Label>
+                   </td>
+                 <td>
+                      <asp:TextBox ID="txt_existing_rebates" Enabled="false" runat="server"></asp:TextBox>
                    </td>
                </tr>
            </table>

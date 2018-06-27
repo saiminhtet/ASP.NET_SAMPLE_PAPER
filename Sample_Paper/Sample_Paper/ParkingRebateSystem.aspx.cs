@@ -19,6 +19,7 @@ namespace Sample_Paper
                 myreceipt = (Receipt)Session["receipt"];
                 myrebate = (Rebates)Session["rebate"];
                 BindGrid();
+                BindGrid2();
             }
         }
 
@@ -26,7 +27,7 @@ namespace Sample_Paper
         {
             GridView1.DataSource = myreceipt.GetReceipts();
             GridView1.DataBind();
-            
+
         }
 
         public void BindGrid2()
@@ -50,11 +51,11 @@ namespace Sample_Paper
         protected void btn_applyRebates_Click(object sender, EventArgs e)
         {
             string vehicle = txt_vehicleNo.Text;
-              myreceipt = (Receipt)Session["receipt"];
+            myreceipt = (Receipt)Session["receipt"];
 
 
             ArrayList receiptlist = new ArrayList();
-         
+
             foreach (var item in myreceipt.ReceiptList)
             {
                 receiptlist.Add(item);
@@ -62,8 +63,8 @@ namespace Sample_Paper
 
             try
             {
-               Rebates rebates = new Rebates();
-               rebates.applyRebates(vehicle, receiptlist);
+                Rebates rebates = new Rebates();
+                rebates.applyRebates(vehicle, receiptlist);
                 Session["rebate"] = rebates;
                 BindGrid2();
             }
@@ -72,6 +73,19 @@ namespace Sample_Paper
 
                 throw;
             }
+        }
+
+        protected void txt_vehicleNo_TextChanged(object sender, EventArgs e)
+        {
+            string vehicle = txt_vehicleNo.Text;
+            double ExistingRebates = findExistingRebates(vehicle);
+            txt_existing_rebates.Text = ExistingRebates.ToString();
+        }
+
+
+        public double findExistingRebates(string vehicle)
+        {
+            return 10;
         }
     }
 }

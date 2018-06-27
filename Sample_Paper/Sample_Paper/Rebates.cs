@@ -57,14 +57,14 @@ namespace Sample_Paper
 
         public Rebates()
         {
+           
+
+
             RebatesList = new List<Rebates>();
         }
 
-   
 
-
-        public const string AddToRebatesNG = "Failed to add Rebates, please try again.";
-        public const string AddToRebatesOK = "Added info to Rebates.";
+        
 
         public void applyRebates(string vehicle, ArrayList receiptlist)
         {

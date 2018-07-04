@@ -15,11 +15,11 @@ namespace Sample_Paper
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            Session["receipt"] = new Receipt();
 
+            //Declear Session Variables
+            Session["receipt"] = new Receipt();  //this is calling the Receipt Class 
 
-            //List<Rebates> rebatelist = new List<Rebates>(rebates);
-            Session["rebate"] = new Rebates();
+            Session["rebate"] = new Rebates();  //this is calling the Rebates Class
         }
     }
 }

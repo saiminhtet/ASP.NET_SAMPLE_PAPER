@@ -42,29 +42,17 @@ namespace Sample_Paper
             this.amount = amount;
         }
 
-        public Rebates(string vehicle, Rebates rebates)
-        {
-
-        }
-
-        public List<Rebates> RebatesList { get; set; }
-
-       public Rebates(string vehicle, ArrayList receiptlist)
-        {
-            this.vehicle = vehicle;
-            
-        }
-
         public Rebates()
         {
-           
-
-
             RebatesList = new List<Rebates>();
         }
 
 
-        
+        // Class Variables, Properties
+        public List<Rebates> RebatesList { get; set; }
+     
+
+        //Methods
 
         public void applyRebates(string vehicle, ArrayList receiptlist)
         {
@@ -75,10 +63,7 @@ namespace Sample_Paper
                 if (vehicle != null)
                 {
                     bool IsExists = false;
-                    foreach (Receipt item in receiptlist)
-                    {
-                       // item.Receipt_Sn;
-                    }
+                   
                     if (!IsExists)
                     {
                         Rebates rebates = new Rebates();
@@ -90,7 +75,7 @@ namespace Sample_Paper
                             rebates.amount = item.Amount;
                             RebatesList.Add(rebates);
                         }
-                       // Session["rebate"] = new Rebates();
+                      
                     }
                        
 
@@ -99,7 +84,6 @@ namespace Sample_Paper
             catch (Exception e)
             {
 
-                
             }
         }
 

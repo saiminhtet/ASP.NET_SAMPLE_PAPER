@@ -7,6 +7,10 @@ namespace Sample_Paper
 {
     public class Receipt
     {
+
+
+        // Class Variables, Properties
+
         string shop;
         string receipt_sn;
         double amount;
@@ -26,12 +30,23 @@ namespace Sample_Paper
             get { return amount; }
         }
 
+
+        //Constructor
+       
+
         public Receipt(string receipt_sn, string shop, double amount)
         {
             this.receipt_sn = receipt_sn;
             this.shop = shop;
             this.amount = amount;
         }
+
+        public Receipt()  
+        {
+            ReceiptList = new List<Receipt>();   //this is use to store session data
+        }
+
+
 
         // Class Variables, Properties
         public List<Receipt> ReceiptList { get; set; }
@@ -40,11 +55,9 @@ namespace Sample_Paper
         public const string AddToReceipttOK = "Added info to receipt.";
 
 
-        public Receipt()
-        {
-            ReceiptList = new List<Receipt>();
-        }
+       
 
+        //Methods
         public string AddReceipt(Receipt receipt)
         {
             try
@@ -70,6 +83,8 @@ namespace Sample_Paper
                 return AddToReceiptNG;
             }
         }
+
+
 
         public List<Receipt> GetReceipts()
         {
